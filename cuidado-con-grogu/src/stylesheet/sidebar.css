@@ -1,0 +1,21 @@
+.sidebar__layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    font-size: 3em;
+}
+
+.sidebar__button {
+    font-size: 0.5em;
+    width:90%;
+    height:80px;
+    background-color: #f2a900;
+}
+
+.jenny {
+color:white;
+margin: 0 px;
+padding: 0 px;    
+}

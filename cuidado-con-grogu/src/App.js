@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Footer from './components/Footer';
+import GameComponent from './components/GameComponent';
+import  SideBar from './components/SideBar';
+import  Main  from './components/Main';
+import  PiecesComponent  from './components/PiecesComponent';
+import  RulesComponent  from './components/RulesComponent';
 
+
+console.log('Entrando a App');
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='App__background'>
+        <div className="App__layout">
+           <div className="App__sidebar">
+           <SideBar/>
+           </div>
+           <div className="App__main">
+            <p> Parrafo o texto a explicar</p>    
+           </div>
+        </div>
+    </div>   
   );
 }
 
