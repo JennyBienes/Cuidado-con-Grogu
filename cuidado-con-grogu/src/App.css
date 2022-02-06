@@ -7,22 +7,29 @@ text-decoration: none;
 }
 
 .App__background {
-  background: url('../src/Images/stars-back.jpg') no-repeat center;
-  width:100wh;
-  height: 100vh;
+  background: url('../src/Images/FOndoplaneta2.png') center;
+  width: 100wh;
+  height: 100vH;
 }
 
-
 .App__layout{
+  display:flex;
+  flex-direction:column;
+  box-sizing: border-box;
+  min-width: 300px; 
+  }  
+
+.App__mainlayout{
 display:flex;
 flex-direction: row;
 box-sizing: border-box;
 min-width: 300px; 
 }  
+
 .App__sidebar{
   border: gray solid;
   box-sizing: border-box;
-  height: 100vh;
+  height: 90vh;
   width: 30%;  
 }
 
@@ -30,9 +37,18 @@ min-width: 300px;
 .App__main{
   display: flex;
   flex-direction:row;
-  height: 100vh;
+  height: 90vh;
   width: 60%;
   margin-left: 5%;
   margin-right: 5%;
-  border: green solid;
+  border: lightgray solid;
+  color:white
   }
+
+.App__footer{
+background-color: black;
+height: 10vh;
+width: 100wh;
+color:white;
+border: solid orange;
+}
