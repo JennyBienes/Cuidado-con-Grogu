@@ -27,7 +27,6 @@ min-width: 300px;
 }  
 
 .App__sidebar{
-  border: gray solid;
   box-sizing: border-box;
   height: 90vh;
   width: 30%;  
@@ -41,7 +40,6 @@ min-width: 300px;
   width: 60%;
   margin-left: 5%;
   margin-right: 5%;
-  border: lightgray solid;
   color:white
   }
 
@@ -50,5 +48,4 @@ background-color: black;
 height: 10vh;
 width: 100wh;
 color:white;
-border: solid orange;
 }
