@@ -1,40 +1,25 @@
 import { Routes, Route, Switch } from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
 import { useState } from 'react';
-import Footer from './components/Footer';
-import GameComponent from './components/GameComponent';
-import SideBar from './components/SideBar';
-import './stylesheet/sidebar.css';
-//import  Main  from './components/Main';
+//import SideBar from './components/SideBar';
+import HomePage from './components/HomePage';
 import PiecesComponent from './components/PiecesComponent';
 import RulesComponent from './components/RulesComponent';
-import HomePage from './components/HomePage';
-//import ModalWindow from './ModalWindow';
+import GameComponent from './components/GameComponent';
+import Footer from './components/Footer';
 import Grogu from './Images/grogu.jpg';
-import './stylesheet/homepage.css';
+import logo from './logo.svg';
+import './App.css';
+import './stylesheet/sidebar.css';
 
 function App() {
   const [OptionSelected, setOptionSelected] = useState('Ir al inicio');
 
   const handleButton = (ev) => {
-    console.log('El botón ha sido pulsado', ev.currentTarget.value);
-    setOptionSelected(ev.currentTarget.value);
-  };
+   console.log('En App detecto que el botón ha sido pulsado', ev.currentTarget.value);
+   setOptionSelected(ev.currentTarget.value);
+};
 
-  console.log('La opción seleccionada es', OptionSelected);
-  //console.log('El setOptionSelected ha quedado como',setOptionSelected);
-
-  const SetMainWindow = () => {
-    //switch (OptionSelected) {
-    // case 'Ir al Inicio':
-    // console.log('Ejecutando opción Ir al Inicio');
-    // <HomePage/>
-    // default:
-    // console.log('Ejecutando default');
-    // <HomePage/>
-    //};
-  };
+  console.log('En App detecto que la opción seleccionada es', OptionSelected);
 
   return (
     <div className='App__background'>
@@ -49,18 +34,18 @@ function App() {
             </div>
           </div>
           <div className="App__main">
+            {OptionSelected === "Ir al inicio" ?
+              <HomePage /> : null
+            }
+            {OptionSelected === "Reglas del Juego" ?
+              <RulesComponent /> : null
+            }
+            {OptionSelected === "Fichas" ?
+              <PiecesComponent /> : null
+            }
             {OptionSelected === "A jugar" ?
               <GameComponent /> : null
-            };
-            {OptionSelected === "Reglas del Juego" ?
-                <RulesComponent /> : null
-            };
-            {OptionSelected === "Fichas" ?
-                <PiecesComponent /> :null
-             };
-            {OptionSelected === "Ir al inicio" ?
-                <HomePage /> : null
-             };
+            }
           </div>
         </div>
         <div className="App__footer">

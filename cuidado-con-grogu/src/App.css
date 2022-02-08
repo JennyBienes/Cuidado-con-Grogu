@@ -7,9 +7,10 @@ text-decoration: none;
 }
 
 .App__background {
-  background: url('../src/Images/FOndoplaneta2.png') center;
+  background: url('../src/Images/FOndoplaneta2.png') border-box;
   width: 100wh;
   height: 100vH;
+  align-items: stretch;
 }
 
 .App__layout{

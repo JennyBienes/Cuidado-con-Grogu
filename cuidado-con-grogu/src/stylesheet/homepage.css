@@ -1,25 +1,30 @@
+.homepage{
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
 .homepage__title{
     text-align: center;
-    justify-content: center;
     font-size: 40px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: peru;
     margin-top: auto;
 }
 .homepage__img{
+    justify-items: center;
     border:2px solid peru;
     border-collapse: collapse;
-    transform: translate( 10%,10% );
-    weight:50wh;
+    width: 90%;
     height:40vh;
-    text-align: center;
-    margin:auto;
+    margin: 0.2em;
+    margin-left: 5%;
 }
 .homepage__paragraph{
     font-family:cursive;
     line-height: normal;
     text-align: center;
-    font-size: 17px;
+    font-size: 100%;
     color: black;
-    margin-top: 20px;
+    padding-top: 20px;
 }

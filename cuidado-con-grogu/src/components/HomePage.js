@@ -3,11 +3,11 @@ import Grogu from '../Images/grogu.jpg';
 
 const HomePage = () => {
   return (
-    <section className="Homepage">
+    <section className="homepage">
     <h1 className="homepage__title"> Cuidado con Grogu</h1>
     <img className="homepage__img" src={Grogu} alt="Cuidado con Grogu" />
     <p className="homepage__paragraph">
-      En un univeso muy lejano al Mandaloriano se le ha presentado un gran
+      En un universo muy lejano al Mandaloriano se le ha presentado un gran
       inconveniente, el insaciable hambre del niño Grogu, porque el niño no
       tiene ningún escrúpulo a la hora de robar y devorar los huevos de la
       mujer rana, las galletas y las ranas en sí. De hecho, lo disfruta. Desde
