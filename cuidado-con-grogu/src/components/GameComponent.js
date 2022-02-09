@@ -1,13 +1,30 @@
 import '../stylesheet/gamecomponent.css';
+import Camino from '../Images/camino.png';
+
 
 const GameComponent = () => {
     console.log('Entrando a Game Component');
     return (
-        <section className="rules">
-            <div className="rules__instructions">
-                <p className="rules__paragraph">
-                    Lorem ipsum..... Game components
-                </p>
+        <section className="game__box">
+            < div className="game__row">
+                <div className="game__item">
+                    <img className="img__item"src={Camino} alt="Zona de descarga" />
+                </div>
+                <div className="game__item">
+                    <img className="img__item"src={Camino} alt="Zona de descarga" />
+                </div>
+                <div className="game__item">
+                    <img className="img__item"src={Camino} alt="Zona de descarga" />
+                </div>
+                <div className="game__item">
+                    <img className="img__item"src={Camino} alt="Zona de descarga" />
+                </div>
+                <div className="game__item">
+                    <img className="img__item"src={Camino} alt="Zona de descarga" />
+                </div>
+                <div className="game__item">
+                    <img className="img__item"src={Camino} alt="Zona de descarga" />
+                </div>
             </div>
         </section>
     );

@@ -1,0 +1,10 @@
+.img__item{
+    width: 90%;
+    height: 90%;
+}
+
+.game__row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
