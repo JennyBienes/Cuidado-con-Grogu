@@ -22,6 +22,7 @@
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: peru;
+    margin: 3vh 0 1vh 0;
 }
 .game__row{
     display: flex;
@@ -33,7 +34,7 @@
 
 .game__play{
     width: 99%;
-    height: 50vh;
+    height: 45vh;
 }
 
 .game__item{
@@ -53,10 +54,14 @@
 }
 
 .dice__game{
-    width: 27%;
-    height: 45%;
+    width: 20%;
     display: block;
     margin:auto;
+}
+
+.dice__game:hover{
+     transform: scale(1.1, 1.1) translateY(-4px);
+
 }
 
 .img__game{

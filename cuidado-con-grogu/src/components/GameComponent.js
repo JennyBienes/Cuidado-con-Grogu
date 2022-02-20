@@ -5,31 +5,48 @@ import Dado from '../Images/dice.png';
 import Huevo from '../Images/Huevo.png';
 import Galleta from '../Images/macaron_azul.png';
 import Rana from '../Images/Rana.png';
+import { useState } from 'react';
 
 const GameComponent = () => {
     console.log('Entrando a Game Component');
 
-    const positionGrogu = 1;
-    const quantityCookies = 3;
-    const quantityFrogs = 3;
-    const quantityEggs = 3;
-    const result = ('')
+    let positionGrogu = 0;
+    let quantityCookies = 3;
+    let quantityFrogs = 3;
+    let quantityEggs = 3;
+    let result = ('')
+    const [generarAleatorio,setGenerarAleatorio]= useState('');
 
-    const generarAleatorio = () => {
-        return Math.floor(Math.random() * 3);
-    }
+    const handleDice = () =>{
+     setGenerarAleatorio(Math.floor(Math.random() * 4));
+    } 
+
 
     console.log('El numero aleatorio es', generarAleatorio);
-    //if generarAleatorio === (0) {
-    //    result = "Avanza positionGrogu";
-    //    positionGrogu + 1
-    //} else if generarAleatorio === (1) {
-    //    result = "Avanza positionGrogu";
-    //    positionGrogu + 2;
-    //}
 
-
-
+   switch (generarAleatorio){
+    case 0:
+        positionGrogu ++;
+        console.log('La nueva posición de Grogu es ',positionGrogu,'Cantidad de huevos ',quantityEggs,' la cantidad de galletas',quantityCookies,' y la cantidad de ranas es ',quantityFrogs);
+        result= ("¡Cuidado! Grogu avanza rápidamente");
+        break;
+    case 1:
+        quantityEggs --;
+        console.log('La nueva posición de Grogu es ',positionGrogu,'Cantidad de huevos ',quantityEggs,' la cantidad de galletas',quantityCookies,' y la cantidad de ranas es ',quantityFrogs);
+        result=" Muy bien, has logrado salvar un huevo";
+        break;
+    case 2:
+        quantityCookies --;
+        result=" Sigue así, has logrado salvar una galleta";
+        break;
+    case 3:
+        quantityFrogs --;
+        result= "Que alivio, has logrado una rana más";
+        break;
+    default:
+        break;
+   }
+   
     return (
         <section className="game__box">
             <h1 className="game__title">
@@ -37,9 +54,9 @@ const GameComponent = () => {
             </h1>
 
             <div className="game__play">
-                <p className="game__title"> Haz click en el dado</p>
-                <img className="dice__game" src={Dado} alt="Empieza la partida" />
-                <p className="game__subtitle"> El resultado es:</p>
+                <p className="game__subtitle"> Haz click en el dado</p>
+                <img className="dice__game" src={Dado} type="button" alt="Empieza la partida" onClick= {handleDice}/>
+                <p className="game__title"> {result} </p>
             </div>
             < div className="game__row">
 

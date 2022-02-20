@@ -4,7 +4,7 @@ import twitter from '../Images/twitter-ico.png'
 import "../stylesheet/footer.css";
 
 const Footer = (props) => {
-  console.log("Dentro de Footer");
+  //console.log("Dentro de Footer");
 
   return (
     <footer className="main-footer">
