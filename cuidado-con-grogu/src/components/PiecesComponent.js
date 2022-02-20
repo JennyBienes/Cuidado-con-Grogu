@@ -1,10 +1,10 @@
 import '../stylesheet/piecescomponent.css';
-import Armario from '../Images/Armario Grogu.png';
+import Armario from '../Images/ArmarioGrogu.png';
 import Galleta from '../Images/Galletas Grogu.png';
 import Huevo from '../Images/huevos Grogu.png';
 import Rana from '../Images/Rana.png';
 import Yoda from '../Images/baby .png';
-import Dado from '../Images/Dado.png';
+import Dado from '../Images/dice.png';
 
 
 const PiecesComponent = () => {

@@ -8,8 +8,8 @@ text-decoration: none;
 
 .App__background {
   background: url('../src/Images/FOndoplaneta2.png') border-box;
-  width: 100wh;
-  height: 100vH;
+  width: 100vw;
+  height: 100vh;
   align-items: stretch;
 }
 
@@ -30,7 +30,7 @@ min-width: 300px;
 .App__sidebar{
   box-sizing: border-box;
   height: 90vh;
-  width: 30%;  
+  width: 30vw;  
 }
 
 
@@ -38,15 +38,15 @@ min-width: 300px;
   display: flex;
   flex-direction:row;
   height: 90vh;
-  width: 60%;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 66vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
   color:white
   }
 
 .App__footer{
 background-color: black;
 height: 10vh;
-width: 100wh;
+width: 100vw;
 color:white;
 }
