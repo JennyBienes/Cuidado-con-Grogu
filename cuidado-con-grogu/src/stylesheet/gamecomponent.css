@@ -60,9 +60,8 @@
 }
 
 .dice__game:hover{
-     transform: scale(1.1, 1.1) translateY(-4px);
-
-}
+     transform: scale(1.05, 1.05) translateY(-4px) rotate(15deg);
+     }
 
 .img__game{
     width: 10%;
