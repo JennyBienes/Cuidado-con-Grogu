@@ -12,12 +12,23 @@ import './App.css';
 import './stylesheet/sidebar.css';
 
 function App() {
+  console.log('Entro a App antes de declarar let y const');
   const [OptionSelected, setOptionSelected] = useState('Ir al inicio');
+  let [positionGrogu, setPositionGrogu] = useState(0);
+  let [quantityCookies, setQuantityCookies] = useState(3);
+  let [quantityFrogs, setQuantityFrogs] = useState(3);
+  let [quantityEggs, setQuantityEggs] = useState(3);
+  
+
+//setPositionGrogu(positionGrogu);
+//setQuantityEggs(quantityEggs);
+//setQuantityCookies(quantityCookies);
+//setQuantityFrogs(quantityFrogs);
 
   const handleButton = (ev) => {
-   console.log('En App detecto que el botón ha sido pulsado', ev.currentTarget.value);
-   setOptionSelected(ev.currentTarget.value);
-};
+    console.log('El botón ha sido pulsado en App', ev.currentTarget.value);
+    setOptionSelected(ev.currentTarget.value);
+  };
 
   console.log('En App detecto que la opción seleccionada es', OptionSelected);
 
@@ -44,7 +55,16 @@ function App() {
               <PiecesComponent /> : null
             }
             {OptionSelected === "A jugar" ?
-              <GameComponent /> : null
+              <GameComponent
+              positionGrogu={positionGrogu}
+              setPositionGrogu={setPositionGrogu}
+              quantityEggs={quantityEggs}
+              setQuantityEggs={setQuantityEggs}
+              quantityCookies={quantityCookies}
+              setQuantityCookies={setQuantityCookies}
+              quantityFrogs={quantityFrogs}
+              setQuantityFrogs={setQuantityFrogs}
+              /> : null
             }
           </div>
         </div>

@@ -7,46 +7,48 @@ import Galleta from '../Images/macaron_azul.png';
 import Rana from '../Images/Rana.png';
 import { useState } from 'react';
 
-const GameComponent = () => {
-    console.log('Entrando a Game Component');
-
-    let positionGrogu = 0;
-    let quantityCookies = 3;
-    let quantityFrogs = 3;
-    let quantityEggs = 3;
+const GameComponent = ({positionGrogu, setPositionGrogu,quantityEggs, setQuantityEggs, quantityCookies, setQuantityCookies, quantityFrogs, setQuantityFrogs }) => {
+     
+    console.log('Entrando a Game Component', positionGrogu, quantityEggs, quantityCookies, quantityFrogs);
+    const [diceValue,setDiceValue]= useState('');
     let result = ('')
-    const [generarAleatorio,setGenerarAleatorio]= useState('');
-
+    
     const handleDice = () =>{
-     setGenerarAleatorio(Math.floor(Math.random() * 4));
-    } 
+      setDiceValue(Math.floor(Math.random() * 4));
+      console.log('Ejecuto handleDice');
+     } 
 
+    console.log('El numero aleatorio recien salido de handleDice es', diceValue);
+     debugger;
 
-    console.log('El numero aleatorio es', generarAleatorio);
-
-   switch (generarAleatorio){
+   switch (diceValue){
     case 0:
         positionGrogu ++;
-        console.log('La nueva posición de Grogu es ',positionGrogu,'Cantidad de huevos ',quantityEggs,' la cantidad de galletas',quantityCookies,' y la cantidad de ranas es ',quantityFrogs);
+        console.log('Caso 0 La nueva posición de Grogu es ', positionGrogu,' mantiene Cantidad de huevos ', quantityEggs,' de galletas', quantityCookies,' y de ranas ', quantityFrogs);
         result= ("¡Cuidado! Grogu avanza rápidamente");
         break;
     case 1:
         quantityEggs --;
-        console.log('La nueva posición de Grogu es ',positionGrogu,'Cantidad de huevos ',quantityEggs,' la cantidad de galletas',quantityCookies,' y la cantidad de ranas es ',quantityFrogs);
+        console.log('Caso 1 Posición de Grogu es igual ', positionGrogu,'reduce Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
         result=" Muy bien, has logrado salvar un huevo";
         break;
     case 2:
-        quantityCookies --;
+        quantityCookies -- ;
+        console.log('Caso 2 Posición de Grogu es igual ', positionGrogu,'reduce Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
         result=" Sigue así, has logrado salvar una galleta";
         break;
     case 3:
         quantityFrogs --;
+        console.log('Caso 3 Posición de Grogu es igual ', positionGrogu,'reduce Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
         result= "Que alivio, has logrado una rana más";
         break;
     default:
         break;
    }
-   
+
+   console.log('Posición de Grogu ', positionGrogu,' Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
+  
+
     return (
         <section className="game__box">
             <h1 className="game__title">
@@ -143,20 +145,20 @@ const GameComponent = () => {
 
                     </div>
                     <div className="game__closetArticle">
-                        {quantityFrogs === (3) ?
+                        { quantityFrogs === (3) ?
                             <>
                                 <img className="img__frog" src={Rana} alt="Cuidado con Grogu" />
                                 <img className="img__frog" src={Rana} alt="Cuidado con Grogu" />
                                 <img className="img__frog" src={Rana} alt="Cuidado con Grogu" />
                             </> : null}
 
-                        {quantityFrogs === (2) ?
+                        { quantityFrogs === (2) ?
                             <>
                                 <img className="img__frog" src={Rana} alt="Cuidado con Grogu" />
                                 <img className="img__frog" src={Rana} alt="Cuidado con Grogu" />
                             </> : null}
 
-                        {quantityFrogs === (1) ?
+                        { quantityFrogs === (1) ?
                             <img className="img__frog" src={Rana} alt="Cuidado con Grogu" />
                             : null}
 
