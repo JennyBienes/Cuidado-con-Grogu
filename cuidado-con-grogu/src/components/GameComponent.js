@@ -6,48 +6,45 @@ import Huevo from '../Images/Huevo.png';
 import Galleta from '../Images/macaron_azul.png';
 import Rana from '../Images/Rana.png';
 import { useState } from 'react';
+// import DiceValue from './Dice.js';
 
-const GameComponent = ({positionGrogu, setPositionGrogu,quantityEggs, setQuantityEggs, quantityCookies, setQuantityCookies, quantityFrogs, setQuantityFrogs }) => {
-     
-    console.log('Entrando a Game Component', positionGrogu, quantityEggs, quantityCookies, quantityFrogs);
-    const [diceValue,setDiceValue]= useState('');
-    let result = ('')
+const GameComponent = ({diceValue, setDiceValue, positionGrogu, setPositionGrogu,quantityEggs, setQuantityEggs, quantityCookies, setQuantityCookies, quantityFrogs, setQuantityFrogs, handleDice }) => {
+console.log('Entrando a Game Component', diceValue, positionGrogu, quantityEggs, quantityCookies, quantityFrogs);
+let result = ('')
+console.log('El valor del dado entrando a GameComponent es', diceValue);
     
-    const handleDice = () =>{
-      setDiceValue(Math.floor(Math.random() * 4));
-      console.log('Ejecuto handleDice');
-     } 
-
-    console.log('El numero aleatorio recien salido de handleDice es', diceValue);
-     debugger;
 
    switch (diceValue){
     case 0:
         positionGrogu ++;
+        setPositionGrogu(positionGrogu);
         console.log('Caso 0 La nueva posición de Grogu es ', positionGrogu,' mantiene Cantidad de huevos ', quantityEggs,' de galletas', quantityCookies,' y de ranas ', quantityFrogs);
         result= ("¡Cuidado! Grogu avanza rápidamente");
         break;
     case 1:
         quantityEggs --;
+        setQuantityEggs(quantityEggs);
         console.log('Caso 1 Posición de Grogu es igual ', positionGrogu,'reduce Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
         result=" Muy bien, has logrado salvar un huevo";
         break;
     case 2:
         quantityCookies -- ;
+        setQuantityCookies(quantityCookies);
         console.log('Caso 2 Posición de Grogu es igual ', positionGrogu,'reduce Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
         result=" Sigue así, has logrado salvar una galleta";
         break;
     case 3:
         quantityFrogs --;
+        setQuantityFrogs(quantityFrogs);
         console.log('Caso 3 Posición de Grogu es igual ', positionGrogu,'reduce Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
         result= "Que alivio, has logrado una rana más";
         break;
     default:
         break;
    }
-
-   console.log('Posición de Grogu ', positionGrogu,' Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
-  
+    
+   console.log('Después del Switch queda Posición de Grogu ', positionGrogu,' Cantidad de huevos ', quantityEggs,' la cantidad de galletas', quantityCookies,' y la cantidad de ranas es ', quantityFrogs);
+   debugger;
 
     return (
         <section className="game__box">

@@ -18,6 +18,15 @@ function App() {
   let [quantityCookies, setQuantityCookies] = useState(3);
   let [quantityFrogs, setQuantityFrogs] = useState(3);
   let [quantityEggs, setQuantityEggs] = useState(3);
+  let [diceValue,setDiceValue] = useState ('7');
+    
+  const handleDice = (diceValue) => {
+      diceValue = parseInt(Math.floor(Math.random() * 4));
+      console.log('El nuevo valor del dado ahora lanzado es', diceValue);
+      setDiceValue(diceValue);
+      console.log('Ahora launchDice es',diceValue);
+  // return diceValue
+  }
   
 
 //setPositionGrogu(positionGrogu);
@@ -56,6 +65,8 @@ function App() {
             }
             {OptionSelected === "A jugar" ?
               <GameComponent
+              diceValue={diceValue}
+              setDiceValue={setDiceValue}
               positionGrogu={positionGrogu}
               setPositionGrogu={setPositionGrogu}
               quantityEggs={quantityEggs}
@@ -64,6 +75,7 @@ function App() {
               setQuantityCookies={setQuantityCookies}
               quantityFrogs={quantityFrogs}
               setQuantityFrogs={setQuantityFrogs}
+              handleDice={handleDice}
               /> : null
             }
           </div>
