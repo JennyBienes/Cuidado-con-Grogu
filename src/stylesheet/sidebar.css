@@ -1,0 +1,19 @@
+.sidebar__layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    font-size: 3em;
+    }
+
+.sidebar__button {
+    font-size: 2vw;
+    width:90%;
+    height: 15%;
+    background-color: #f2a900;
+    border-radius: 1.5em;
+}
+.sidebar__button:hover{
+    box-shadow: 9px 2px 48px 7px steelblue;
+    }

@@ -1,0 +1,80 @@
+.card_pieces{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.pieces__title {
+    text-align: center;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: peru;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    padding-top: 5px;
+}
+.pieces__row{
+    width: 60vw;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1px;
+    }
+
+.box__item {
+    align-items: center;
+    justify-content: center;
+    border:solid peru;
+    width: 25vw;
+    height: 25vh;
+}
+
+.card1__img{
+    width: 50%;
+    height: 70%;
+    display: block;
+    margin:auto;
+}
+
+.card__name{
+    font-size: 1em;
+    text-align: center;
+}
+
+.card2__img{
+    width: 50%;
+    height: 70%;
+    display: block;
+    margin:auto;
+}
+
+.card3__img{
+    width: 50%;
+    height: 70%;
+    display: block;
+    margin:auto;
+}
+
+.dice__img{
+    width: 50%;
+    height: 70%;
+    display: block;
+    margin:auto;
+}
+
+
+.card4__img{
+    width: 30%;
+    height: 70%;
+    display: block;
+    margin:auto;
+}
+
+.card5__img{
+    width: 50%;
+    height: 70%;
+    display: block;
+    margin:auto;
+    
+}
