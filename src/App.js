@@ -19,8 +19,11 @@ function App() {
   let [quantityFrogs, setQuantityFrogs] = useState(3);
   let [quantityEggs, setQuantityEggs] = useState(3);
   let [diceValue,setDiceValue] = useState ('7');
+  const [msgResult,setMsgResult] = useState ('');
     
-  const handleDice = (diceValue) => {
+    
+  const handleDice = (event) => {
+    console.log(event);
       diceValue = parseInt(Math.floor(Math.random() * 4));
       console.log('El nuevo valor del dado ahora lanzado es', diceValue);
       setDiceValue(diceValue);
@@ -28,11 +31,7 @@ function App() {
   // return diceValue
   }
   
-
-//setPositionGrogu(positionGrogu);
-//setQuantityEggs(quantityEggs);
-//setQuantityCookies(quantityCookies);
-//setQuantityFrogs(quantityFrogs);
+  debugger;
 
   const handleButton = (ev) => {
     console.log('El botón ha sido pulsado en App', ev.currentTarget.value);
@@ -76,6 +75,8 @@ function App() {
               quantityFrogs={quantityFrogs}
               setQuantityFrogs={setQuantityFrogs}
               handleDice={handleDice}
+              msgResult={msgResult}
+              setMsgResult={setMsgResult}
               /> : null
             }
           </div>
