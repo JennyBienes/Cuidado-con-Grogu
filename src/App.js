@@ -21,18 +21,7 @@ function App() {
   let [diceValue,setDiceValue] = useState ('7');
   const [msgResult,setMsgResult] = useState ('');
     
-    
-  const handleDice = (event) => {
-    console.log(event);
-      diceValue = parseInt(Math.floor(Math.random() * 4));
-      console.log('El nuevo valor del dado ahora lanzado es', diceValue);
-      setDiceValue(diceValue);
-      console.log('Ahora launchDice es',diceValue);
-  // return diceValue
-  }
-  
-  debugger;
-
+ 
   const handleButton = (ev) => {
     console.log('El botón ha sido pulsado en App', ev.currentTarget.value);
     setOptionSelected(ev.currentTarget.value);
@@ -74,7 +63,6 @@ function App() {
               setQuantityCookies={setQuantityCookies}
               quantityFrogs={quantityFrogs}
               setQuantityFrogs={setQuantityFrogs}
-              handleDice={handleDice}
               msgResult={msgResult}
               setMsgResult={setMsgResult}
               /> : null

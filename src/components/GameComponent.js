@@ -8,11 +8,20 @@ import Rana from '../Images/Rana.png';
 import { useState } from 'react';
 // import DiceValue from './Dice.js';
 
-const GameComponent = ({ diceValue, setDiceValue, positionGrogu, setPositionGrogu, quantityEggs, setQuantityEggs, quantityCookies, setQuantityCookies, quantityFrogs, setQuantityFrogs, handleDice, msgResult, setMsgResult }) => {
+const GameComponent = ({ diceValue, setDiceValue, positionGrogu, setPositionGrogu, quantityEggs, setQuantityEggs, quantityCookies, setQuantityCookies, quantityFrogs, setQuantityFrogs, msgResult, setMsgResult }) => {
     console.log('Entrando a Game Component', diceValue, positionGrogu, quantityEggs, quantityCookies, quantityFrogs);
     //let result = ('')
     console.log('El valor del dado entrando a GameComponent es', diceValue);
-
+   
+    const handleDice = (event) => {
+        console.log(event);
+          diceValue = parseInt(Math.floor(Math.random() * 4));
+          console.log('El nuevo valor del dado ahora lanzado es', diceValue);
+          setDiceValue(diceValue);
+      }
+      
+      debugger;
+    
 
     switch (diceValue) {
         case 0:
@@ -32,14 +41,26 @@ const GameComponent = ({ diceValue, setDiceValue, positionGrogu, setPositionGrog
             quantityEggs--;
             setQuantityEggs(quantityEggs);
             console.log('Caso 1 Posición de Grogu es igual ', positionGrogu, 'reduce Cantidad de huevos ', quantityEggs, ' la cantidad de galletas', quantityCookies, ' y la cantidad de ranas es ', quantityFrogs);
-            setMsgResult(" Muy bien, has logrado salvar un huevo");
+            if (quantityEggs < 0) {
+                setMsgResult("Ya no te quedan más huevos que salvar, lanza el dado para salvar el resto de cosas ")
+            } else if (quantityEggs === 2) {
+                setMsgResult(" Muy bien, has logrado salvar el primer  huevo");
+            } else {
+                setMsgResult("Sigue así, has logrado salvar otro huevo")
+            };
             setDiceValue('7');
             break;
         case 2:
             quantityCookies--;
             setQuantityCookies(quantityCookies);
             console.log('Caso 2 Posición de Grogu es igual ', positionGrogu, 'reduce Cantidad de huevos ', quantityEggs, ' la cantidad de galletas', quantityCookies, ' y la cantidad de ranas es ', quantityFrogs);
-            setMsgResult(" Sigue así, has logrado salvar una galleta");
+            if (quantityCookies < 0) {
+                setMsgResult("Ya no te quedan más galletas que salvar, lanza el dado para salvar el resto de cosas")
+            } else if (quantityCookies === 2) {
+                setMsgResult(" Genial, has logrado salvar la primera galleta");
+            } else {
+                setMsgResult("¡Adelante! has logrado salvar otra galleta")
+            };
             setDiceValue('7');
             break;
         case 3:
