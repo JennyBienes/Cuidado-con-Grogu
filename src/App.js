@@ -27,7 +27,7 @@ function App() {
     
  
   const handleButton = (ev) => {
-    console.log('La opción ha sido escogida en App', ev.currentTarget.value);
+    console.log('La opción se ha sido escogida en App', ev.currentTarget.value);
     setOptionSelected(ev.currentTarget.value);
   };
 
