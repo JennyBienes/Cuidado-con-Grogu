@@ -6,6 +6,7 @@ import Huevo from '../Images/Huevo.png';
 import Galleta from '../Images/macaron_azul.png';
 import Rana from '../Images/Rana.png';
 import { useState } from 'react';
+//import ModalWindow from './ModalWindow';
 // import DiceValue from './Dice.js';
 
 const GameComponent = ({ diceValue, setDiceValue, positionGrogu, setPositionGrogu, quantityEggs, setQuantityEggs, quantityCookies, setQuantityCookies, quantityFrogs, setQuantityFrogs, msgResult, setMsgResult }) => {
@@ -20,8 +21,6 @@ const GameComponent = ({ diceValue, setDiceValue, positionGrogu, setPositionGrog
           setDiceValue(diceValue);
       }
       
-      debugger;
-    
 
     switch (diceValue) {
         case 0:
@@ -34,6 +33,7 @@ const GameComponent = ({ diceValue, setDiceValue, positionGrogu, setPositionGrog
                 setMsgResult("Estás a punto de perder")
             } else {
                 setMsgResult("Grogu avanza rápidamente")
+
             };
             setDiceValue('7');
             break;
@@ -67,7 +67,13 @@ const GameComponent = ({ diceValue, setDiceValue, positionGrogu, setPositionGrog
             quantityFrogs--;
             setQuantityFrogs(quantityFrogs);
             console.log('Caso 3 Posición de Grogu es igual ', positionGrogu, 'reduce Cantidad de huevos ', quantityEggs, ' la cantidad de galletas', quantityCookies, ' y la cantidad de ranas es ', quantityFrogs);
-            setMsgResult("Que alivio, has logrado una rana más");
+            if (quantityFrogs < 0) {
+                setMsgResult("Ya no te quedan más ranas que salvar, lanza el dado para salvar el resto de cosas")
+            } else if (quantityFrogs === 2) {
+                setMsgResult(" Genial, has logrado salvar la primera rana");
+            } else {
+                setMsgResult("¡Adelante! has logrado salvar otra rana")
+            };
             setDiceValue('7');
             break;
         default:

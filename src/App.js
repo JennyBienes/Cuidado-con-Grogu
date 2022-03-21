@@ -1,15 +1,17 @@
 import { Routes, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
-//import SideBar from './components/SideBar';
 import HomePage from './components/HomePage';
 import PiecesComponent from './components/PiecesComponent';
 import RulesComponent from './components/RulesComponent';
 import GameComponent from './components/GameComponent';
 import Footer from './components/Footer';
-import Grogu from './Images/grogu.jpg';
-import logo from './logo.svg';
 import './App.css';
 import './stylesheet/sidebar.css';
+import HappyGrogu from './Images/happyBabyYoda.gif';
+import WinGame from './Images/winGame.gif';
+import Grogu from './Images/grogu.jpg';
+import logo from './logo.svg';
+
 
 function App() {
   console.log('Entro a App antes de declarar let y const');
@@ -19,6 +21,8 @@ function App() {
   let [quantityFrogs, setQuantityFrogs] = useState(3);
   let [quantityEggs, setQuantityEggs] = useState(3);
   let [diceValue,setDiceValue] = useState ('7');
+  let [youWon,setYouWon] = useState (0);
+
   const [msgResult,setMsgResult] = useState ('');
     
  
@@ -27,8 +31,25 @@ function App() {
     setOptionSelected(ev.currentTarget.value);
   };
 
+  const   handleButtonTryAgain   = (ev) => {
+    console.log('Se reinician todas las variables');
+    setQuantityCookies(3);
+    setQuantityEggs(3);
+    setQuantityFrogs(3);
+    setPositionGrogu(0);
+    setYouWon(0);
+    };
+
+   if (quantityCookies < 1 && quantityEggs <1 && quantityFrogs < 1 ) {
+    youWon= 1;
+    console.log('he ganado y cambio setYouWon', youWon)
+   } 
+
+   
   console.log('En App detecto que la opción seleccionada es', OptionSelected);
 
+  debugger;
+    
   return (
     <div className='App__background'>
       <div className="App_layout">
@@ -42,16 +63,34 @@ function App() {
             </div>
           </div>
           <div className="App__main">
-            {OptionSelected === "Ir al inicio" ?
+            { quantityCookies < 1 && quantityEggs <1 && quantityFrogs < 1 ?
+              <div className="ended__game">
+                <img className="ended__img" src={WinGame} alt="¡Lo has logrado!" /> 
+               <p className="ended__msg"> ¡Felicidades! has logrado salvar toda la comida. ¡Tu misión ha sido completada! </p>
+               <input className="try__again" type= "button" onClick={handleButtonTryAgain} value="Volver a empezar" />
+              </div>
+              : null
+            }
+            
+            {positionGrogu > 6 ?
+              <div className="ended__game">
+                <img className="ended__img" src={HappyGrogu} alt="Lo siento, has perdido" /> 
+                <p className="ended__msg"> Grogu está muy feliz, ha llegado a la comida. ¡Lo siento, has perdido!  </p>
+                <input className="try__again" type= "button" onClick={handleButtonTryAgain} value="Volver a empezar" />
+              </div>
+              : null
+            }
+
+            {OptionSelected === "Ir al inicio" && positionGrogu < 7 && youWon === 0 ?
               <HomePage /> : null
             }
-            {OptionSelected === "Reglas del Juego" ?
+            {OptionSelected === "Reglas del Juego" && positionGrogu < 7 && youWon === 0 ?
               <RulesComponent /> : null
             }
-            {OptionSelected === "Fichas" ?
+            {OptionSelected === "Fichas"  && positionGrogu < 7 && youWon === 0?
               <PiecesComponent /> : null
             }
-            {OptionSelected === "A jugar" ?
+            {OptionSelected === "A jugar" && positionGrogu < 7 && youWon === 0?
               <GameComponent
               diceValue={diceValue}
               setDiceValue={setDiceValue}
