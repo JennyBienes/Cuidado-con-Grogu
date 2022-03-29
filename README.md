@@ -26,6 +26,6 @@ Este proyecto ha sido llevado a cabo utilizando React, JavaScript, HTML y CSS. H
 
 Dicho proyecto aún cuando fue hecho en un principio para superar una prueba técnica de un proceso de selección en el que me encontraba participando se convirtió en un reto hacerlo realidad, debo decir que tuve que pararme muchas veces a repensar de qué forma hacer las funcionalidades para que el juego funcionara bien. Me siento muy feliz de haberlo logrado. Con certeza puedo decir: "Reto superado".
 
-## Gracias 🎁 
+#### Gracias 🎁 
 
 - Infinitas gracias a mi esposo por su comprensión, empuje y entusiasmo para sacar adelante este proyecto 🍺
