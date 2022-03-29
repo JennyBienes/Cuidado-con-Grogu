@@ -28,4 +28,4 @@ Dicho proyecto aún cuando fue hecho en un principio para superar una prueba té
 
 #### Gracias 🎁 
 
-- Infinitas gracias a mi esposo por su comprensión, empuje y entusiasmo para sacar adelante este proyecto 🍺
+Infinitas gracias a mi esposo por su comprensión, empuje y entusiasmo para sacar adelante este proyecto 🍺
