@@ -2,11 +2,11 @@
 ![image](https://user-images.githubusercontent.com/87121745/160582044-4e5f3163-f2a8-4d48-bf25-18e4b0ad2b94.png)
 
 
-Es un Videojuego creado con React que consiste en una misión de la cual está a cargo Grogu; el juego se gana cuando se logra descargar del armario toda la mercancía (3 huevos, 3 ranas, 3 galletas) sin que Grogu tenga acceso a ellas, de lo contrario si Grogu llega al armario antes de que se descarguen en su totalidad habrás perdido. Para ello se debe clickar el dado y leer el mensaje que éste va dejando.
+Es un Videojuego creado con React que consiste en una misión de la cual está a cargo el Mandaloriano; el juego se gana cuando se logra descargar del armario toda la mercancía (3 huevos, 3 ranas, 3 galletas) sin que Grogu tenga acceso a ellas, de lo contrario si Grogu llega al armario antes de que se descarguen en su totalidad habrás perdido. Para ello se debe clickar el dado y leer el mensaje que éste va dejando.
 
 ## Tecnologías usadas 🚀
 
-Este proyecto ha sido llevado a cabo utilizando React, JavaScript, HTML y CSS. He trabajado con el Create-react-app dividiendo el JavaScript en varios componentes hijos e importándolos luego cada uno en el componente principal App.js. He añadido 7 componentes hijos a los cuales brevemente me referiré a continuación:
+Este proyecto ha sido llevado a cabo utilizando React, JavaScript, HTML, CSS y Node.js. He trabajado con el Create-react-app dividiendo el JavaScript en varios componentes hijos e importándolos luego cada uno en el componente principal App.js. He añadido 7 componentes hijos a los cuales brevemente me referiré a continuación:
 
 1.- El componente Dice es el que se encarga de ejecutar la función del dado.
 
